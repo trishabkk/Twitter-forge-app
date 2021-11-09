@@ -1,8 +1,27 @@
-import React, {useState} from 'react';
+// Function with two parameters 
+// First paramater is a function you want to run
+//Second par
+
+
+import React, {useState, useEffect} from 'react';
+
+const Counter = () => {
+  let [count, setCount] = useState(0);
+  setTimeout(() => setCount(count + 1), 50);
+
+  return (
+    <div>
+      {count}
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+
+};
+
+// export default counter;
 
 function App() {
-      <header>
-        <p> Edit ("twitter page") with the formal names. 
+        {/* <p> Edit ("twitter page") with the formal names.  */}
   let [firstName, setFirstName] = useState("");
   let [bio, setBio] = useState("");
   let [people, setPeople] = useState([]);
@@ -10,10 +29,13 @@ function App() {
 
   let [textInput, setTextInput] = useState("");
   return (
+    <header>
     <div style={{ textAlign: 'center' }}>
       <input value={firstName} onChange={e => setFirstName(e.target.value)} />
           <input value={bio} onChange={e => setBio(e.target.value)} />
           <button
+          
+          
             onClick={() =>
               setPeople([...people, { firstName: firstName, bio: bio }])
             }
@@ -29,7 +51,7 @@ function App() {
             ))}
           </div>
         </div>
-        </p>
+        {/* </p> */}
         </header>
       );
     }
